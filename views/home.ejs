@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Blog | Website</title>
+  </head>
+  <body>
+    <h1><%=heading%></h1>
+    <p><%= paragraph%></p>
+    <h3><a href="/compose">Compose</a></h3>
+    <% if(post.length > 0){ %> <% for(let i = 0; i < post.length ; i++) { %>
+    <div class="posts">
+      <h2><%=post[i].title%></h2>
+      <p>
+        <%=post[i].body.substring(0,180);%> .....
+        <a
+          style="text-decoration: none; color: blue"
+          href="/post/<%=post[i].title%>"
+          >read more</a
+        >
+      </p>
+    </div>
+    <%}%> <% } %>
+  </body>
+</html>
